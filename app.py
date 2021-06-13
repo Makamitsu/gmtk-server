@@ -5,9 +5,6 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from random import randrange, choice
 import json
-import os
-
-os.remove("data.db")
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
