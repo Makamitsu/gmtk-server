@@ -14,8 +14,9 @@ limiter = Limiter(
     app,
     key_func=get_remote_address, # get users IP address.
 )
-
 db = SQLAlchemy(app)
+
+db.create_all()
 
 class GameContent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -108,5 +109,4 @@ def populate():
     db.session.commit()
 
 if __name__ == '__main__':
-    db.create_all()
     app.run()
