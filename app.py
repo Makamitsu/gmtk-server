@@ -16,8 +16,6 @@ limiter = Limiter(
 )
 db = SQLAlchemy(app)
 
-db.create_all()
-
 class GameContent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
@@ -32,6 +30,8 @@ class GameContent(db.Model):
 
     def __repr__(self):
         return f"Player {self.name} with id: {self.id}"
+
+db.create_all()
 
 @app.route('/status')
 def status():
