@@ -90,7 +90,6 @@ def send_result(gameContent):
     #Todo
     pass
 
-
 def populate():
     newGameContent = GameContent(
         name = "josh",
