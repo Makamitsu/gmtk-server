@@ -110,3 +110,7 @@ def populate():
 
 if __name__ == '__main__':
     app.run()
+
+    result = GameContent.query.first()
+    if result is None:
+        populate()
