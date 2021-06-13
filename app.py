@@ -32,8 +32,6 @@ class GameContent(db.Model):
     def __repr__(self):
         return f"Player {self.name} with id: {self.id}"
 
-db.create_all()
-
 @app.route('/status')
 def status():
     return "OK"
@@ -110,4 +108,5 @@ def populate():
     db.session.commit()
 
 if __name__ == '__main__':
+    db.create_all()
     app.run()
