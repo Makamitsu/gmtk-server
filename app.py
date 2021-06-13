@@ -108,3 +108,6 @@ def populate():
     db.session.add(newGameContent)
 
     db.session.commit()
+
+if __name__ == '__main__':
+    app.run()
